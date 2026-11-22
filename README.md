@@ -6,6 +6,17 @@
 - 产品与数据设计：`../产品文档/03_记录版_产品与数据设计.md`
 - 旧版（计划驱动）：`../suishenjian/`，继续可用，不再迭代
 
+## 线上地址
+
+| 用途 | 地址 | 说明 |
+|---|---|---|
+| **长期使用（推荐）** | https://axl-kane.github.io/gymlog/ | GitHub Pages，链接固定；改完推送后自动重建 |
+| 备用（WorkBuddy 沙箱） | https://forma-shape.app.workbuddy.host/?sharecode=7HBAGVQJ4Q | 平台应用入口，**必须带 sharecode**；缺参数会显示"链接不完整" |
+
+代码仓库：https://github.com/Axl-Kane/gymlog（公开仓库，只有代码，没有任何训练/饮食记录）
+
+手机上打开上面的地址 → 分享 → 添加到主屏幕，即可全屏离线使用。
+
 ## 本地跑起来
 
 ```bash
@@ -53,7 +64,15 @@ node tests/data.test.mjs
 
 ## 部署
 
-纯静态，任何静态托管都能放：对象存储、GitHub Pages、Vercel、EdgeOne Pages。
-放上去之后用手机浏览器打开 → 分享 → 添加到主屏幕，即可全屏离线使用（`sw.js` 负责缓存）。
+纯静态，任何静态托管都能放。目前线上用 **GitHub Pages**（仓库根目录直接托管，无需构建）。
+
+改完代码后同步到线上：
+
+```bash
+python scripts/publish-pages.py
+```
+
+脚本走 GitHub API 提交（因为本机代理会掐断 `git push` 到 github.com），约 1 分钟后 Pages 自动重建。
+首次开启 Pages 需要在仓库 Settings → Pages 里选 `main` / `/ (root)`，已经开好了。
 
 发版时记得改 `sw.js` 里的 `VERSION`，否则手机会一直用旧缓存。
