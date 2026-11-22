@@ -1,0 +1,11 @@
+{
+  "name": "gymlog",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "随身健 v2 · 训练与饮食记录内核（零依赖静态版）",
+  "scripts": {
+    "dev": "python -m http.server 5178",
+    "test": "node tests/data.test.mjs"
+  }
+}

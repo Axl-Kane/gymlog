@@ -1,0 +1,20 @@
+{
+  "name": "随身健 · 训练与饮食记录",
+  "short_name": "随身健",
+  "description": "本地优先的健身记录：训练组次、身体数据、饮食热量。",
+  "lang": "zh-CN",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F2F2F7",
+  "theme_color": "#F2F2F7",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
